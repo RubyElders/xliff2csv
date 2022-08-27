@@ -2,8 +2,8 @@
 
 require 'nokogiri'
 require 'csv'
-require 'byebug'
 require 'fileutils'
+require 'irb'
 
 def query2hash(string)
     return {} if string.nil?
@@ -45,7 +45,7 @@ CSV.foreach( csv_filename ,{:headers => :string,:col_sep => ";",:encoding => "bo
 end
 
 filescollection.each do |file,content|
-    debugger if file =~ /145/
+    binding.irb if file =~ /145/
     file_params= content.first.first
     builder = Nokogiri::XML::Builder.new(:encoding => 'UTF-8') { |xml|
       xml.xliff(:version => "1.2",:xmlns => "urn:oasis:names:tc:xliff:document:1.2") {

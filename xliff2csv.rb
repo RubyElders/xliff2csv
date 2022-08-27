@@ -2,7 +2,6 @@
 
 require 'nokogiri'
 require 'csv'
-require 'byebug'
 require 'sanitize'
 
 # ruby xliff2csv.rb -S SourceFolder
