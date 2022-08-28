@@ -37,7 +37,7 @@ FileUtils.mkdir_p(folder)
 #Read csv with header: Filename  file_params trans-unit_params   same    Source  sc  target  tc
 filescollection = Hash.new(Array.new)
 
-CSV.foreach( csv_filename ,{:headers => :string,:col_sep => ";",:encoding => "bom|utf-8"}) do |row|
+CSV.foreach( csv_filename ,:headers => :string,:col_sep => ";",:encoding => "bom|utf-8") do |row|
 
     file_params=query2hash(row["File_params"])
     tu_params=query2hash(row["Trans-unit_params"])
